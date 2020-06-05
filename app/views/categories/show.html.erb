@@ -1,4 +1,12 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="category-wrapper">
+<div class="category-sidebar">
+  <%= render 'sidebar' %>
+</div>
+<div class="category-container">
+  <% @category.products.each do |product| %>
+  <%= render 'shared/cards', product: product %>
+  <% end %>
+</div>
+</div>
 
-<h2><%= @category.title %></h2>
+

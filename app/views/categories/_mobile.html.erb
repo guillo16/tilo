@@ -1,0 +1,18 @@
+ <div class="dropdown">
+  <button class="btn btn-filter-solid dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categorias
+  </button>
+  <% division_title =  @category.division.title %>
+  <% category_links = @categories.filter { |category| category.division.title == division_title } %>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% category_links.each do |g| %>
+    <p><%= link_to g.title, category_path(g), class: 'dropdown-item' %></p>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+.btn-filter {
+  border-color: $green;
+  border: 2px solid $green;
+  background-color: transparent;
+  color: $green;
+  border-radius: 8px;
+  padding: 2px 8px;
+
+  i {
+    color: $green;
+  }
+}

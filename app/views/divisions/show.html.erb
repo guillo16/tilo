@@ -1,6 +1,21 @@
-<h1>Divisions#show</h1>
 <div class="division-banner d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @division.photo %>');">
   <div>
     <h2><%= @division.title %></h2>
   </div>
 </div>
+<section id="category-list">
+  <div class="categories-list text-center d-md-flex justify-content-center">
+    <% @division.categories.each do |category| %>
+    <p><%= link_to category.title , category_path(category)  %></p>
+    <% end %>
+  </div>
+</section>
+<section id="division-product-container">
+  <div class="division-container">
+    <% @division.categories.each do |category| %>
+    <% category.products.each do |product| %>
+    <%= render 'shared/cards', product: product %>
+    <% end %>
+    <% end %>
+  </div>
+</section>

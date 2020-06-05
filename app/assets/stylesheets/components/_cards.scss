@@ -19,9 +19,9 @@
   }
   p {
     padding-top: 6px;
-    border-top: 8px solid green;
+    border-top: 8px solid #919984;
     font-size: 14px;
-    color: green;
+    color: #919984;
     font-weight: bold;
     margin-bottom: 24px;
     padding-left: 4px;
@@ -30,7 +30,7 @@
 
   h2 {
     font-size: 24px;
-    color: green;
+    color: #919984;
     font-weight: bold;
     padding-bottom: 16px;
   }
@@ -51,12 +51,7 @@
       height: 200px;
     }
     p {
-      padding-top: 6px;
-      border-top: 8px solid green;
       font-size: 13px;
-      color: green;
-      font-weight: bold;
-      margin-bottom: 24px;
     }
   }
 }

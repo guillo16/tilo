@@ -1,12 +1,25 @@
+
 <div class="category-wrapper">
-<div class="category-sidebar">
-  <%= render 'sidebar' %>
-</div>
-<div class="category-container">
-  <% @category.products.each do |product| %>
-  <%= render 'shared/cards', product: product %>
-  <% end %>
-</div>
+  <div class="category-sidebar">
+    <%= render 'sidebar' %>
+  </div>
+  <div>
+    <div class="category-title d-flex justify-content-between">
+      <div>
+        <h2><%= @category.title %></h2>
+        <p><%= @category.products.count %> productos</p>
+      </div>
+      <div>
+        <button class="btn-filter"> Ordenar por &nbsp; <i class="fas fa-long-arrow-alt-down"></i><i class="fas fa-long-arrow-alt-up"></i></button>
+      </div>
+    </div>
+    <div class="category-container">
+
+      <% @category.products.each do |product| %>
+      <%= render 'shared/cards', product: product %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

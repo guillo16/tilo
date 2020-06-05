@@ -1,4 +1,31 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="category-wrapper">
+  <div class="d-none d-sm-block category-sidebar">
+    <%= render 'sidebar' %>
+  </div>
+  <div>
+    <div class="category-title d-flex justify-content-between">
+      <div>
+        <h2><%= @category.title %></h2>
+        <p><%= @category.products.count %> productos</p>
+      </div>
+      <div>
+        <button class="btn-filter"> Ordenar por &nbsp; <i class="fas fa-long-arrow-alt-down"></i><i class="fas fa-long-arrow-alt-up"></i></button>
+      </div>
+    </div>
+    <div class=" d-sm-none d-flex justify-content-between">
+      <div>
+        <%= render 'mobile' %>
+      </div>
+      <div>
+        <%= render 'modal' %>
+      </div>
+    </div>
+    <div class="category-container">
+      <% @category.products.each do |product| %>
+      <%= render 'shared/cards', product: product %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<h2><%= @category.title %></h2>
+

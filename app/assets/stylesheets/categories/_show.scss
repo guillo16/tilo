@@ -24,3 +24,90 @@
     color: $green;
   }
 }
+
+
+.sidebar-container {
+ h2 {
+  color: $green;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 6px;
+  border-bottom: 2px solid lightgrey;
+}
+
+h3 {
+  border-bottom: 4px solid lightgrey;
+  width: 20px;
+  margin-top: -16px;
+}
+
+p {
+  color: black;
+}
+}
+
+.sidebar-filter {
+  h2 {
+    font-size: 18px;
+    color: $green;
+    font-size: bold;
+    border-bottom: none;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .category-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category-title {
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 0px;
+      color: $green;
+    }
+    p {
+      font-weight: bold;
+      font-size: 13px;
+      color: $green;
+    }
+  }
+}
+
+
+@media(max-width: 575px) {
+  .category-wrapper {
+    width: 90%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+  }
+
+  .category-container {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 30px;
+  }
+
+  .category-title {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

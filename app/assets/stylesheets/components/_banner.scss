@@ -1,3 +1,22 @@
+.main-banner {
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 70px);
+  h1 {
+    font-size: 80px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    letter-spacing: 12px;
+  }
+
+  p {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
 .division-banner {
   background-position: center;
   background-size: cover;
@@ -9,3 +28,4 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
 }
+

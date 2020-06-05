@@ -3,6 +3,6 @@ class Product < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true
-  validates :description, precense: true
-  validates :stock, precense: true
+  validates :description, presence: true
+  validates :stock, presence: true
 end

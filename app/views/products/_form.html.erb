@@ -1,0 +1,8 @@
+<%= simple_form_for @product do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :photo %>
+<%= f.input :stock %>
+<%= f.association :category %>
+<%= f.submit 'Crear Producto' %>
+<% end %>

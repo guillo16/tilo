@@ -2,6 +2,9 @@ class DivisionsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
   before_action :set_division, only: [:show, :edit, :update]
 
+  def index
+  end
+
   def show
   end
 

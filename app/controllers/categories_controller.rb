@@ -2,6 +2,9 @@ class CategoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
   before_action :set_category, only: [:show, :edit, :update]
 
+  def index
+    @categories = Category.all
+  end
   def show
   end
 

@@ -10,6 +10,12 @@
     <% end %>
   </div>
 </section>
-<section id="division-container">
-<%= render 'shared/cards' %>
+<section id="division-product-container">
+  <div class="division-container">
+    <% @division.categories.each do |category| %>
+    <% category.products.each do |product| %>
+    <%= render 'shared/cards', product: product %>
+    <% end %>
+    <% end %>
+  </div>
 </section>

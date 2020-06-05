@@ -1,0 +1,11 @@
+<div class="product-card-wrapper">
+  <%= link_to product_path(product) do %>
+  <div class="product-card">
+    <img src="<%= product.photo %>" alt="">
+    <p><%= product.title %></p>
+    <h2>$<%= product.stock %></h2>
+  </div>
+  <% end %>
+</div>
+
+

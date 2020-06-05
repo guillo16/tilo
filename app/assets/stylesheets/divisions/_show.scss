@@ -1,0 +1,20 @@
+.categories-list {
+  width: 90%;
+  margin: 0 auto;
+  padding: 12px 0px;
+  border-bottom: 1px solid lightgrey;
+
+  a {
+    margin-right: 12px;
+    margin-bottom: 0px;
+    color: black;
+    &:hover {
+      text-decoration: none;
+      color: grey;
+    }
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
+}

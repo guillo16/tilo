@@ -1,0 +1,9 @@
+<div class="product-card home-card">
+  <%= link_to product_path(product) do %>
+  <img src="<%= product.photo %>" alt="">
+  <p><%= product.title.truncate(30) %></p>
+  <h2>$<%= product.stock %></h2>
+  <% end %>
+</div>
+
+

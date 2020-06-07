@@ -4,3 +4,24 @@
     <p>TIENDA NATURAL</p>
   </div>
 </div>
+<section id="home-products">
+  <%= render 'cards' %>
+</section>
+<section id="social">
+  <%= render 'shared/social' %>
+</section>
+<section id="home-products-footer">
+  <div class="p-5 text-center home-title">
+    <h2>Destacados</h2>
+    <h3></h3>
+  </div>
+  <div class="scrolling-wrapper">
+    <div class="home-card-container">
+      <% @products.last(8).each do |product| %>
+      <%= render 'shared/home_cards', product: product %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+

@@ -4,7 +4,7 @@
 <p>Descripcion</p>
 <%= f.input :description, label: false %>
 <p>Foto</p>
-<%= f.input :photo, label: false %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <p>Stock</p>
 <%= f.input :stock, label: false %>
 <p>Sabor</p>

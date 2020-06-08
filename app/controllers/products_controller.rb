@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_products, only: [:show, :edit, :update, :destroy]
+  before_action :set_products, only: [:show, :update, :destroy]
 
   def index
     @products = Product.all
@@ -15,7 +15,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if current_user.admin?
+      @product = Product.new
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def create
@@ -29,6 +34,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_user.admin?
+      @product = Product.find(params[:id])
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def update

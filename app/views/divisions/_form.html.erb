@@ -1,5 +1,7 @@
 <%= simple_form_for @division do |f| %>
-<%= f.input :title %>
-<%= f.input :photo %>
+<p>Titulo</p>
+<%= f.input :title, label: false %>
+<p>Foto (poner el link de la foto)</p>
+<%= f.input :photo, label: false %>
 <%= f.submit 'Create Categoria Principal', class: 'btn btn-dark btn-block' %>
 <% end %>

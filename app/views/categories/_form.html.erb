@@ -1,5 +1,7 @@
 <%= simple_form_for @category do |f| %>
-<%= f.input :title %>
-<%= f.association :division %>
-<%= f.submit 'Crear Categoria' %>
+<p>Nombre</p>
+<%= f.input :title, label: false %>
+<p>Categoria Principal</p>
+<%= f.association :division, label: false %>
+<%= f.submit 'Crear Categoria', class: 'btn btn-dark btn-block' %>
 <% end %>

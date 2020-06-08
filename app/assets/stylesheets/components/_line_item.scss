@@ -30,13 +30,10 @@
 }
 
 .line-quantity {
-  width: 40px;
-  p {
-    font-size: 13px;
-    padding: 5px;
-    border: 1px solid lightgrey;
-    text-align: center;
-  }
+  width: 80px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+
 }
 
 .line-price {
@@ -73,6 +70,6 @@
    }
 
 
-}
+ }
 
 }

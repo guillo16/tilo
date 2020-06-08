@@ -1,9 +1,14 @@
 class CategoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
-  before_action :set_category, only: [:show, :edit, :update]
+  before_action :set_category, only: [:show, :update]
 
   def index
-    @categories = Category.all
+    if current_user.admin?
+      @categories = Category.all
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def show
@@ -19,7 +24,12 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new
+    if current_user.admin?
+      @category = Category.new
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def create
@@ -32,6 +42,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    if current_user.admin?
+      @category = Category.find(params[:id])
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def update

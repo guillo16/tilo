@@ -1,11 +1,14 @@
 <div class="product-card-wrapper">
   <%= link_to product_path(product) do %>
   <div class="product-card">
-    <img src="<%= product.photo %>" alt="">
+    <% product.photos.first(1).each do |photo| %>
+    <%= cl_image_tag photo.key%>
+    <% end %>
     <p><%= product.title %></p>
     <h2>$<%= product.stock %></h2>
   </div>
   <% end %>
 </div>
+
 
 

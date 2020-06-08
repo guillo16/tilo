@@ -1,4 +1,6 @@
-<div class="container text-center">
+<% if current_user.admin? %>
+<br><br>
+<div class="container text-center mt-5">
   <h2>Categorias Principales</h2>
   <table class="table table-striped table-bordered ">
     <thead class="thead-dark">
@@ -22,4 +24,6 @@
     <%= link_to 'Volver', :back, class: 'btn btn-danger btn-block' %>
   </div>
 </div>
-
+<% else %>
+<%= link_to 'Volver', root_path %>
+<% end %>

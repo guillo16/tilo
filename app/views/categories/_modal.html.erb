@@ -1,4 +1,3 @@
-
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Filtrar por
 </button>
@@ -14,17 +13,18 @@
         </button>
       </div>
       <div class="modal-body">
-        <h2>Sabor</h2>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <h2>Condicion</h2>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
-        <p><%= link_to 'Durazno', '#'  %></p>
+        <div class="sidebar-filter">
+          <% @products.last(1).each do |product| %>
+          <% if product.flavor.present? %>
+          <h2>Sabor</h2>
+          <% else %>
+          <% end %>
+          <% end %>
+          <% @category.products.each do |product| %>
+          <p><%= link_to product.flavor, category_path(flavor: product.flavor)%></p>
+          <% end %>
+          <p><%= link_to 'Todos', category_path(@category)  %></p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

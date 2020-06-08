@@ -1,9 +1,16 @@
 <%= simple_form_for @product do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :photo %>
-<%= f.input :stock %>
-<%= f.input :flavor %>
-<%= f.association :category %>
-<%= f.submit 'Crear Producto' %>
+<p>Nombre</p>
+<%= f.input :title, label: false %>
+<p>Descripcion</p>
+<%= f.input :description, label: false %>
+<p>Foto</p>
+<%= f.input :photo, label: false %>
+<p>Stock</p>
+<%= f.input :stock, label: false %>
+<p>Sabor</p>
+<%= f.input :flavor, label: false %>
+<p>Categoria</p>
+<%= f.association :category, label: false %>
+<%= f.submit 'Crear Producto', class: 'btn btn-product btn-lg btn-block' %>
 <% end %>
+

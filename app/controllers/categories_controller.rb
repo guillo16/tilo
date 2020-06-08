@@ -9,13 +9,9 @@ class CategoriesController < ApplicationController
   def show
     @products = @category.products
     if params["created_at"]
-      @products = @category.products.order(created_at: :desc)
-    elsif params["stock"]
+      @products = @category.products.order(created_at: :asc)
+    elsif params["flavor"]
       @products = Product.where(flavor: params["flavor"])
-    # elsif params["condition"]
-    #   @products = @category.products.where(condition: params["condition"])
-    # elsif params[:price]
-    #   @products = @category.products.where("price <= ?", params[:price]).reverse_order
     else
       @products
     end

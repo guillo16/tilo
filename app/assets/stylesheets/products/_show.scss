@@ -107,6 +107,19 @@
   border-bottom: none;
 }
 
+//Product footer
+
+.product-footer {
+  text-align: center;
+
+  h2 {
+    padding: 88px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    color: $green;
+  }
+}
+
 
 @media(max-width: 992px){
   .product-show-wrapper {
@@ -132,4 +145,15 @@
       font-size: 32px;
     }
   }
+
+  .product-footer {
+    text-align: center;
+
+    h2 {
+       padding: 56px 0px;
+      font-size: 18px;
+
+    }
+  }
+
 }

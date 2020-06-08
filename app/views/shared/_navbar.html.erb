@@ -34,7 +34,7 @@
       <% end %>
       <li class="nav-item d-lg-none">
         <% if user_signed_in? %>
-        <%= link_to "Perfil", '#', class: "nav-link" %>
+        <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
         <% else %>
         <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
         <% end %>
@@ -44,8 +44,14 @@
   </div>
   <div class="d-none d-lg-block">
     <i class="fas fa-search" style="color: white; font-size: 24px;"></i>
-    <%= link_to '#' do%>
+    <% if user_signed_in? %>
+    <%= link_to user_path(current_user) do%>
     <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
+    <% end %>
+    <% else %>
+    <%= link_to new_user_session_path do%>
+    <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
+    <% end %>
     <% end %>
   </div>
 </nav>

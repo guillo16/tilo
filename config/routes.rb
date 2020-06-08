@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :divisions, except: :destroy
   resources :categories, except: :destroy
   resources :products
+  resources :users, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

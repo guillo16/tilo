@@ -16,7 +16,7 @@
   <div class="sidebar-filter">
     <h2>Sabor</h2>
     <% @category.products.each do |r| %>
-    <h5><%= link_to r.stock, category_path(stock: r.stock)%></h5>
+    <h5><%= link_to r.flavor, category_path(flavor: r.flavor)%></h5>
 
     <% end %>
   </div>

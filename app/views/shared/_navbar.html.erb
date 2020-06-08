@@ -1,19 +1,18 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-lewagon">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="guillo" onclick="onClick()">
-    <span class="h">
+    <span class="menu">
       <svg width="30" height="18" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="30" height="2.57143" fill="white"/>
         <rect y="7.71429" width="18.2609" height="2.57143" fill="white"/>
         <rect y="15.4286" width="24.7826" height="2.57143" fill="white"/>
       </svg>
     </span>
-    <span class="none g">
+    <span class="none cross">
       <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="37.0786" height="3" transform="matrix(0.691384 0.722487 -0.805471 0.592635 4.36426 0)" fill="white"/>
         <rect width="37.0786" height="3" transform="matrix(0.691384 -0.722487 0.805471 0.592635 0 26.7888)" fill="white"/>
       </svg>
     </span>
-
   </button>
   <div>
     <a class="navbar-brand" href="#">
@@ -43,30 +42,14 @@
 <script>
 
   const onClick = () => {
-    const minus = document.querySelector('.g');
-    const plus = document.querySelector('.h');
-    minus.classList.toggle('jose');
-    plus.classList.toggle('none');
+    const crossButton = document.querySelector('.cross');
+    const menuButton = document.querySelector('.menu');
+    crossButton.classList.toggle('block');
+    menuButton.classList.toggle('none');
   }
 
 </script>
 
 <style>
-  .none {
-    display: none;
-  }
 
-  .jose {
-    display: block;
-  }
-
-  .fa-times {
-    color: white;
-    width: 30px;
-    height: 30px;
-  }
-
-  .colors {
-    background-color: black;
-  }
 </style>

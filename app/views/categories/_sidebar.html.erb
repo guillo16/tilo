@@ -25,10 +25,4 @@
     <% end %>
     <p><%= link_to 'Todos', category_path(@category)  %></p>
   </div>
-  <h4>Precio</h4>
-  <i class="fas fa-chevron-down"></i>
-  <h5><%= link_to "$300 - $1000", category_path(min_price: 1, max_price: 100000) %></h5>
-  <h5> <%= link_to "$1000 - $3000", category_path(min_price: 100000, max_price: 300000) %></h5>
-  <h5> <%= link_to "$3000 - $4000", category_path(min_price: 300000, max_price: 500000) %></h5>
-  <h5><%= link_to "Más de $4000", category_path(min_price: 400000, max_price: 500000000) %></h5>
 </div>

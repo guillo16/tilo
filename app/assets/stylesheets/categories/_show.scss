@@ -30,23 +30,28 @@
 .sidebar-container {
   position: sticky !important;
   top: 100px;
- h2 {
-  color: $green;
-  font-size: 24px;
-  font-weight: bold;
-  padding-bottom: 6px;
-  border-bottom: 2px solid lightgrey;
-}
+  h2 {
+    color: $green;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 6px;
+    border-bottom: 2px solid lightgrey;
+  }
 
-h3 {
-  border-bottom: 4px solid lightgrey;
-  width: 20px;
-  margin-top: -16px;
-}
+  h3 {
+    border-bottom: 4px solid lightgrey;
+    width: 20px;
+    margin-top: -10px;
+  }
 
-p {
-  color: black;
-}
+  a {
+    color: black;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
 }
 
 .sidebar-filter {
@@ -55,6 +60,10 @@ p {
     color: $green;
     font-size: bold;
     border-bottom: none;
+  }
+
+  a {
+    color: black;
   }
 }
 

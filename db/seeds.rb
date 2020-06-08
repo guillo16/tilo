@@ -10,7 +10,7 @@
 
 puts 'clearing database'
 
-Products.delete_all
+Product.delete_all
 Category.delete_all
 Division.delete_all
 

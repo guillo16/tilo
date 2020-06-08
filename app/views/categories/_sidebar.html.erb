@@ -3,18 +3,26 @@
   <div class="sidebar-list">
     <p style="color: grey;"><%= @category.title %></p>
     <h3></h3>
-   <% division_title =  @category.division.title %>
-   <% category_links = @categories.filter { |category| category.division.title == division_title } %>
-   <% category_links.each do |g| %>
-   <%= link_to category_path(g) do  %>
+    <% division_title =  @category.division.title %>
+    <% category_links = @categories.filter { |category| category.division.title == division_title } %>
+    <% category_links.each do |g| %>
+    <%= link_to category_path(g) do  %>
 
-   <p><%= g.title %></p>
-   <% end %>
-   <% end %>
- </div>
- <h2>Filtrar por:</h2>
- <div class="sidebar-filter">
-  <h2>Sabor</h2>
-
- </div>
+    <p><%= g.title %></p>
+    <% end %>
+    <% end %>
+  </div>
+  <h2>Filtrar por:</h2>
+  <div class="sidebar-filter">
+    <% @products.last(1).each do |product| %>
+    <% if product.flavor.present? %>
+    <h2>Sabor</h2>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% @category.products.each do |product| %>
+    <p><%= link_to product.flavor, category_path(flavor: product.flavor)%></p>
+    <% end %>
+    <p><%= link_to 'Todos', category_path(@category)  %></p>
+  </div>
 </div>

@@ -1,6 +1,9 @@
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #929884;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,8 +21,25 @@
 
 .nav-item {
   color: white ;
+  padding-left: 10px;
 }
 .nav-link {
   color: white !important;
   font-size: 18px;
+
 }
+
+// for the Javascript
+.none {
+    display: none;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .fa-times {
+    color: white;
+    width: 30px;
+    height: 30px;
+  }

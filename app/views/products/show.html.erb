@@ -1,2 +1,18 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="product-show-wrapper">
+  <div class="product-image">
+    <%= render 'carousel' %>
+  </div>
+  <div class="product-description">
+   <%= render 'product_content' %>
+ </div>
+</div>
+<div class="product-footer">
+  <h2>PRODUCTOS RELACIONADOS</h2>
+  <div class="scrolling-wrapper">
+    <div class="home-card-container">
+      <% @products.last(8).each do |product| %>
+      <%= render 'shared/home_cards', product: product %>
+      <% end %>
+    </div>
+  </div>
+</div>

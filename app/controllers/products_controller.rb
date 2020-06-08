@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    if params["flavor"]
+      @products = Product.where(flavor: params["flavor"])
+    else
+      @products
+    end
   end
 
   def show

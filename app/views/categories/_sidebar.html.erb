@@ -14,19 +14,21 @@
   </div>
   <h2>Filtrar por:</h2>
   <div class="sidebar-filter">
+    <% @products.last(1).each do |product| %>
+    <% if product.flavor.present? %>
     <h2>Sabor</h2>
-    <% @category.products.each do |r| %>
-    <h5><%= link_to r.flavor, category_path(flavor: r.flavor)%></h5>
-
+    <% else %>
     <% end %>
+    <% end %>
+    <% @category.products.each do |product| %>
+    <p><%= link_to product.flavor, category_path(flavor: product.flavor)%></p>
+    <% end %>
+    <p><%= link_to 'Todos', category_path(@category)  %></p>
   </div>
-
-  <h5>  <%= link_to 'masreciente',category_path(created_at: :asc) %></h5>
-
-    <h4>Precio</h4>
-    <i class="fas fa-chevron-down"></i>
-    <h5><%= link_to "$300 - $1000", category_path(min_price: 1, max_price: 100000) %></h5>
-    <h5> <%= link_to "$1000 - $3000", category_path(min_price: 100000, max_price: 300000) %></h5>
-    <h5> <%= link_to "$3000 - $4000", category_path(min_price: 300000, max_price: 500000) %></h5>
-    <h5><%= link_to "Más de $4000", category_path(min_price: 400000, max_price: 500000000) %></h5>
-  </div>
+  <h4>Precio</h4>
+  <i class="fas fa-chevron-down"></i>
+  <h5><%= link_to "$300 - $1000", category_path(min_price: 1, max_price: 100000) %></h5>
+  <h5> <%= link_to "$1000 - $3000", category_path(min_price: 100000, max_price: 300000) %></h5>
+  <h5> <%= link_to "$3000 - $4000", category_path(min_price: 300000, max_price: 500000) %></h5>
+  <h5><%= link_to "Más de $4000", category_path(min_price: 400000, max_price: 500000000) %></h5>
+</div>

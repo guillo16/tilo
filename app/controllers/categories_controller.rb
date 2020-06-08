@@ -8,7 +8,9 @@ class CategoriesController < ApplicationController
 
   def show
     @products = @category.products
-    if params["flavor"]
+    if params["created_at"]
+      @products = @category.products.order(created_at: :desc)
+    elsif params["flavor"]
       @products = Product.where(flavor: params["flavor"])
     else
       @products

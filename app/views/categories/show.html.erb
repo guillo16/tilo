@@ -9,22 +9,30 @@
         <p><%= @category.products.count %> productos</p>
       </div>
       <div>
-        <button class="btn-filter"> Ordenar por &nbsp; <i class="fas fa-long-arrow-alt-down"></i><i class="fas fa-long-arrow-alt-up"></i></button>
-      </div>
+        <div class="dropdown">
+          <button class="btn btn-filter dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ordenar por <!--&nbsp;  <i class="fas fa-long-arrow-alt-down"></i><i class="fas fa-long-arrow-alt-up"></i> -->
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <p><%= link_to 'Mas reciente',category_path(created_at: :asc), class: 'dropdown-item' %></p>
+           <%= link_to 'Mas antiguo', category_path(@category), class: 'dropdown-item' %>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class=" d-sm-none d-flex justify-content-between">
+    <div>
+      <%= render 'mobile' %>
     </div>
-    <div class=" d-sm-none d-flex justify-content-between">
-      <div>
-        <%= render 'mobile' %>
-      </div>
-      <div>
-        <%= render 'modal' %>
-      </div>
-    </div>
-    <div class="category-container">
-      <% @category.products.each do |product| %>
-      <%= render 'shared/cards', product: product %>
-      <% end %>
+    <div>
+      <%= render 'modal' %>
     </div>
   </div>
+  <div class="category-container">
+    <% @products.each do |product| %>
+    <%= render 'shared/cards', product: product %>
+    <% end %>
+  </div>
+</div>
 </div>
 <%= render 'shared/footer' %>

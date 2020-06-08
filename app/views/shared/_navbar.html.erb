@@ -15,54 +15,54 @@
     </span>
   </button>
   <div>
-    <a class="navbar-brand" href="#">
+    <%= link_to root_path, class: 'navbar-brand' do  %>
       <img src="https://res.cloudinary.com/dw7ox75dg/image/upload/v1591298249/LogosTilo-04_1.png" alt="" style="width: 120px; height: 62px; object-fit: cover;">
-    </a>
-  </div>
-
-  <div class="d-lg-none">
-    <i class="fas fa-search" style="color: white; margin-right: 10px;font-size: 24px;"></i>
-  </div>
-
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <% @divisions.each do |division| %>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <%= link_to division.title, division_path(division), class: 'nav-link' %>
-      </li>
-
       <% end %>
-      <li class="nav-item d-lg-none">
-        <% if user_signed_in? %>
-        <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
-        <% else %>
-        <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+    </div>
+
+    <div class="d-lg-none">
+      <i class="fas fa-search" style="color: white; margin-right: 10px;font-size: 24px;"></i>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <% @divisions.each do |division| %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to division.title, division_path(division), class: 'nav-link' %>
+        </li>
+
         <% end %>
+        <li class="nav-item d-lg-none">
+          <% if user_signed_in? %>
+          <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
+          <% else %>
+          <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+          <% end %>
 
-      </li>
-    </ul>
-  </div>
-  <div class="d-none d-lg-block">
-    <i class="fas fa-search" style="color: white; font-size: 24px;"></i>
-    <% if user_signed_in? %>
-    <%= link_to user_path(current_user) do%>
-    <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
-    <% end %>
-    <% else %>
-    <%= link_to new_user_session_path do%>
-    <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
-    <% end %>
-    <% end %>
-  </div>
-</nav>
+        </li>
+      </ul>
+    </div>
+    <div class="d-none d-lg-block">
+      <i class="fas fa-search" style="color: white; font-size: 24px;"></i>
+      <% if user_signed_in? %>
+      <%= link_to user_path(current_user) do%>
+      <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
+      <% end %>
+      <% else %>
+      <%= link_to new_user_session_path do%>
+      <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
+      <% end %>
+      <% end %>
+    </div>
+  </nav>
 
 
 
-<script>
-  const onClick = () => {
-    const crossButton = document.querySelector('.cross');
-    const menuButton = document.querySelector('.menu');
-    crossButton.classList.toggle('block');
-    menuButton.classList.toggle('none');
-  }
-</script>
+  <script>
+    const onClick = () => {
+      const crossButton = document.querySelector('.cross');
+      const menuButton = document.querySelector('.menu');
+      crossButton.classList.toggle('block');
+      menuButton.classList.toggle('none');
+    }
+  </script>

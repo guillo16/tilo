@@ -89,6 +89,12 @@
     border-bottom: 1px solid lightgrey;
   }
 }
+//user index part
+.users-container {
+  width: 90%;
+  margin: 100px auto;
+}
+
 
 @media(max-width: 700px) {
   .about-container {
@@ -105,5 +111,9 @@
 
   .product-user-title {
     font-size: 17px;
+  }
+
+  .users-container {
+    width: 100%;
   }
 }

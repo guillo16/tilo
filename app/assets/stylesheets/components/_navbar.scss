@@ -18,7 +18,10 @@
   .nav-link {
     color: white !important;
     font-size: 17px;
+  }
 
+  .navbar-brand {
+    margin-right: 0px;
   }
 }
 
@@ -26,16 +29,38 @@
   flex-grow: 0;
 }
 
-
-.cart-item {
+// the mobile right part
+.cart-item-lg {
   margin-right: 10px;
   a {
-     color: white;
+   color: white;
+ }
+}
+
+.magnify {
+  width: 50px;
+}
+.cart-item {
+  font-size: 16px;
+  margin-left: -22px;
+  i {
+    color: white;
+    font-size: 24px;
+  }
+  a {
+    color: white;
   }
 
 }
 
-
+// full size search
+.cart-search{
+  font-size: 22px;
+  margin-left: 6px;
+   a {
+    color: white;
+  }
+}
 // for the Javascript
 .transparent {
   display: none;

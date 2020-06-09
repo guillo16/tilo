@@ -1,8 +1,7 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-    skip_before_action :authenticate_user!, only: [:show, :create]
-
+  skip_before_action :authenticate_user!, only: [:show, :create]
 
   def index
     if current_user.admin?

@@ -21,43 +21,70 @@
   </div>
 
   <div class="d-lg-none">
-    <%= link_to pages_search_path do  %>
-    <i class="fas fa-search" style="color: white; font-size: 24px; margin-right: 10px;"></i>
-    <% end %>
-  </div>
-
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <% @divisions.each do |division| %>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <%= link_to division.title, division_path(division), class: 'nav-link' %>
-      </li>
-
+   <div class="d-flex align-items-center">
+    <div class="cart-item" style="margin-left: -40px;">
+      <% if total_cart_items %>
+      <%= link_to cart_path(@cart) do %>
+      <span class="icon is-small">
+        <i class="fas fa-shopping-basket " style="color: white; font-size: 16px; padding-bottom: 0px;"></i>
+      </span>
+      <span><%= cart_count_over_one %></span>
       <% end %>
-      <li class="nav-item d-lg-none">
-        <% if user_signed_in? %>
-        <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
-        <% else %>
-        <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
-        <% end %>
-
-      </li>
-    </ul>
-  </div>
-  <div class="d-none d-lg-block">
+      <% end %>
+    </div>
     <%= link_to pages_search_path do  %>
-    <i class="fas fa-search" style="color: white; font-size: 24px;"></i>
-    <% end %>
-    <% if user_signed_in? %>
-    <%= link_to user_path(current_user) do%>
-    <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
-    <% end %>
-    <% else %>
-    <%= link_to new_user_session_path do%>
-    <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
-    <% end %>
+    <i class="fas fa-search" style="color: white; font-size: 16px; padding-top: 10px; margin-right: 10px;"></i>
     <% end %>
   </div>
+</div>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+  <% @divisions.each do |division| %>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <%= link_to division.title, division_path(division), class: 'nav-link' %>
+    </li>
+
+    <% end %>
+    <li class="nav-item d-lg-none">
+      <% if user_signed_in? %>
+      <%= link_to "Perfil", user_path(current_user), class: "nav-link" %>
+      <% else %>
+      <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+      <% end %>
+
+    </li>
+  </ul>
+</div>
+<div class="d-none d-lg-block">
+
+  <div class="d-flex align-items-center">
+    <div class="cart-item">
+      <% if total_cart_items %>
+      <%= link_to cart_path(@cart) do %>
+      <span class="icon is-small">
+        <i class="fas fa-shopping-basket"></i>
+      </span>
+      <span><%= cart_count_over_one %></span>
+      <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to pages_search_path do  %>
+      <i class="fas fa-search" style="color: white; font-size: 24px;"></i>
+      <% end %>
+      <% if user_signed_in? %>
+      <%= link_to user_path(current_user) do%>
+      <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
+      <% end %>
+      <% else %>
+      <%= link_to new_user_session_path do%>
+      <i class="fas fa-user" style="color: white; margin-left: 8px;font-size: 24px;"></i>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 </nav>
 
 
@@ -70,3 +97,9 @@
     menuButton.classList.toggle('transparent');
   }
 </script>
+
+<style>
+  .icon {
+    font-size: 24px;
+  }
+</style>

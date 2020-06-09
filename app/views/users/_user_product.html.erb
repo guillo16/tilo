@@ -1,0 +1,6 @@
+<h2 class= "product-user-title">PRODUCTOS RECOMENDADOS</h2>
+<div class= "category-container">
+  <% @products.first(8).each do |product| %>
+  <%= render 'shared/cards', product: product %>
+  <% end %>
+</div>

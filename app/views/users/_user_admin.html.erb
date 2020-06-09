@@ -1,0 +1,12 @@
+<div class="user-show-wrapper">
+  <div class="text-center">
+    <h2>Bienvenido <%= current_user.email %></h2>
+  </div>
+  <%= link_to 'Crear Categoria Principal', new_division_path, class: 'btn btn-dark btn-lg btn-block' %>
+  <%= link_to 'Ver Categoria Principal', divisions_path, class: 'btn btn-primary btn-lg btn-block' %>
+  <%= link_to 'Crear Categoria', new_category_path, class: 'btn btn-dark btn-lg btn-block' %>
+  <%= link_to 'Ver Categorias', categories_path, class: 'btn btn-primary btn-lg btn-block' %>
+  <%= link_to 'Crear Producto', new_product_path, class: 'btn btn-dark btn-lg btn-block'  %>
+  <%= link_to 'Inventario de Productos', products_path, class: 'btn btn-primary btn-lg btn-block'  %>
+  <%= link_to 'Ver Usuarios', users_path, class: 'btn btn-primary btn-lg btn-block'  %>
+</div>

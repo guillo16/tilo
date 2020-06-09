@@ -4,6 +4,22 @@
   background: #929884;
   width: 100%;
   z-index: 1000;
+  .navbar-toggler {
+    border: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .nav-item {
+    color: white ;
+    padding-left: 10px;
+  }
+  .nav-link {
+    color: white !important;
+    font-size: 18px;
+
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,34 +28,19 @@
 
 
 
-.navbar-toggler {
-  border: transparent;
-  &:focus {
-    outline: none;
-  }
-}
 
-.nav-item {
-  color: white ;
-  padding-left: 10px;
-}
-.nav-link {
-  color: white !important;
-  font-size: 18px;
-
-}
 
 // for the Javascript
 .transparent {
-    display: none;
-  }
+  display: none;
+}
 
-  .block {
-    display: block;
-  }
+.block {
+  display: block;
+}
 
-  .fa-times {
-    color: white;
-    width: 30px;
-    height: 30px;
-  }
+.fa-times {
+  color: white;
+  width: 30px;
+  height: 30px;
+}

@@ -1,13 +1,18 @@
-<div class="quantity-container">
-  <%= link_to 'Atras', :back  %>
-  <%= simple_form_for @line_item do |f| %>
-  <% numbers = (1..20) %>
-  <% stock = numbers.select do |number| %>
-  <% product_stock = @line_item.product.stock %>
-  <%  number < product_stock %>
-  <% end %>
-  <p>Cantidad</p>
-  <%= f.input :quantity, :collection =>  stock, label: false  %>
-  <%= f.submit 'guardar', class: 'btn btn-block btn-primary' %>
-  <% end %>
+<div class="quantity-wrapper d-flex justify-content-center align-items-start">
+  <div class="quantity-container mt-5">
+    <div class="text-right">
+      <h2><%= link_to 'X', :back  %></h2>
+    </div>
+    <%= simple_form_for @line_item do |f| %>
+    <% numbers = (1..20) %>
+    <% stock = numbers.select do |number| %>
+    <% product_stock = @line_item.product.stock %>
+    <%  number < product_stock %>
+    <% end %>
+    <p>Cantidad</p>
+    <%= f.input :quantity, :collection =>  stock, label: false  %>
+    <%= f.submit 'GUARDAR CAMBIOS', class: 'btn btn-block btn-product' %>
+    <% end %>
+  </div>
 </div>
+

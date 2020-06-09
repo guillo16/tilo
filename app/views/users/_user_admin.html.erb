@@ -1,5 +1,7 @@
 <div class="user-show-wrapper">
-  <h2>Bienvenido <%= current_user.email %></h2>
+  <div class="text-center">
+    <h2>Bienvenido <%= current_user.email %></h2>
+  </div>
   <%= link_to 'Crear Categoria Principal', new_division_path, class: 'btn btn-dark btn-lg btn-block' %>
   <%= link_to 'Ver Categoria Principal', divisions_path, class: 'btn btn-primary btn-lg btn-block' %>
   <%= link_to 'Crear Categoria', new_category_path, class: 'btn btn-dark btn-lg btn-block' %>

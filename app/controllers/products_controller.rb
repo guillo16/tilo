@@ -3,11 +3,11 @@ class ProductsController < ApplicationController
   before_action :set_products, only: [:show, :update, :destroy]
 
   def index
-    @products = Product.all
-    if params["flavor"]
-      @products = Product.where(flavor: params["flavor"])
+    if current_user.admin?
+      @products = Product.all
     else
-      @products
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
     end
   end
 

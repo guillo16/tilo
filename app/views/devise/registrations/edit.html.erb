@@ -17,6 +17,27 @@
       <p>Email</p>
       <%= current_user.email %>
       <br><br>
+      <p>Nombre</p>
+      <%= f.input :name,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
+      <p>Dirección</p>
+      <%= f.input :address,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
+      <p>Teléfono</p>
+      <%= f.input :phone,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
+      <p>Ciudad</p>
+      <%= f.input :city,
+      required: true,
+      autofocus: true,
+      input_html: { autocomplete: "nombre", class: "form-control form-control" }, label: false %>
+
       <p>Nueva contraseña</p>
       <%= f.input :password,
       hint: "Dejar en blanco si no queres cambiar la contraseña",

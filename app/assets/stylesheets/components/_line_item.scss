@@ -3,6 +3,9 @@
   padding: 20px;
   border-bottom: 1px solid;
   border-color: grey;
+  a {
+   text-decoration: none;
+ }
 }
 
 .line-image {
@@ -30,13 +33,18 @@
 }
 
 .line-quantity {
-  width: 40px;
-  p {
-    font-size: 13px;
-    padding: 5px;
-    border: 1px solid lightgrey;
-    text-align: center;
+  width: 80px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  text-align: center;
+
+  color: grey;
+
+  i {
+    margin-left: 6px;
+    color: black;
   }
+
 }
 
 .line-price {
@@ -65,14 +73,38 @@
  }
 }
 
+
+.quantity-wrapper {
+  height: 100vh;
+  background-color: white;
+
+}
+
+.quantity-container {
+  width: 400px;
+  padding: 50px;
+  box-shadow: 0px 0px 10px lightgrey;
+  border-radius: 8px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  h2 {
+    font-weight: bold;
+    color: black;
+  }
+  p {
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+}
+
 @media(max-width: 600px) {
   .line-image {
    img {
      width: 100px;
      height: 100px;
    }
-
-
-}
+ }
 
 }

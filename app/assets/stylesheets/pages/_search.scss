@@ -6,6 +6,12 @@
   }
 }
 
+.search-navbar {
+  background-color: $green;
+  width: 100%;
+  padding: 10px;
+}
+
 .search-container {
   width: 600px;
   margin: 0 auto;
@@ -26,11 +32,11 @@
 
 .exit-search {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 10px;
   i {
     font-size: 30px;
-    color: black;
+    color: white;
   }
 }
 
@@ -65,7 +71,7 @@
 .search-footer {
   h2 {
     margin-bottom: 20px;
-    color: rgb(74, 73, 74);
+    color: $green;
 
     font-weight: bold;
   }

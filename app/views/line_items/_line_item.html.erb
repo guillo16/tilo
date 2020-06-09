@@ -6,16 +6,19 @@
   </div>
   <div class="line-content">
     <h2><%= line_item.product.title %></h2>
-
+    <% if line_item.product.stock > 1 %>
+    <%= link_to  edit_line_item_path(line_item) do %>
     <div class="line-quantity">
       <%= line_item.quantity %>
-      <% if line_item.product.stock > 1 %>
-      <%= link_to '+ -', edit_line_item_path(line_item) %>
-      <% else %>
-      (ultima unidad)
-      <% end %>
+      <i class="fas fa-angle-down"></i>
     </div>
-
+    <% end %>
+    <% else %>
+    <div class="line-quantity">
+      <%= line_item.quantity %>
+      (ultima unidad)
+    </div>
+    <% end %>
     <div class="line-price">
       <p><strong>PRECIO:</strong> <%= number_to_currency(line_item.total_price) %></p>
     </div>

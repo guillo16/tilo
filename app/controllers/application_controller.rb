@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def set_divisions
+    @divisions = Division.all
+  end
+
   def store_action
     return unless request.get?
 
@@ -19,11 +23,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :address, :phone])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :address, :city, :phone])
   end
 
-  def set_divisions
-    @divisions = Division.all
+  def after_sign_in_path_for(resource)
+    request.env['omniauth.origin'] || stored_location_for(resource) || root_path
   end
 end

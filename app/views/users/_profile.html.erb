@@ -1,0 +1,18 @@
+<div class="profile-user-container">
+  <h3 class= "product-user-title">TUS DATOS</h3>
+  <h2>Nombre legal</h2>
+  <p>Franco ALgo</p>
+  <h2>Telefono</h2>
+  <p>4848484484</p>
+  <h2>Direción</h2>
+  <p>Ruben dario</p>
+  <h2>Provincia</h2>
+  <p>Buenos Aires</p>
+  <h2>Localidad</h2>
+  <p>San nicolas</p>
+  <h2>Codigo postal</h2>
+  <p>4109</p>
+  <h2>Dirección de correo electrónico</h2>
+  <p><%= @user.email %></p>
+  <%= link_to 'Editar Perfil', edit_user_registration_path, class: "btn btn-gradient btn-lg btn-block" %>
+</div>

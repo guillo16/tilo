@@ -17,7 +17,7 @@
   }
   .nav-link {
     color: white !important;
-    font-size: 18px;
+    font-size: 17px;
 
   }
 }
@@ -27,7 +27,13 @@
 }
 
 
+.cart-item {
+  margin-right: 10px;
+  a {
+     color: white;
+  }
 
+}
 
 
 // for the Javascript
@@ -43,4 +49,16 @@
   color: white;
   width: 30px;
   height: 30px;
+}
+
+@media(max-width: 575px) {
+  .navbar-toggler {
+    margin-right: 48px;
+  }
+}
+
+@media(max-width: 380px) {
+  .navbar-toggler {
+    margin-right: 30px;
+  }
 }

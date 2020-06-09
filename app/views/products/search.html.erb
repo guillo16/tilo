@@ -1,0 +1,15 @@
+<%= render 'shared/navbar' %>
+<div class= "product-search-wrapper">
+  <h5><strong>Resultados</strong> (<%= @products.count %>)</h4>
+
+    <div class= "division-container ">
+      <% @products.each do |product| %>
+      <%= render 'shared/cards', product: product %>
+      <% end %>
+    </div>
+    <div class="p-5 text-center">
+      <div class="p-5">
+       <%= link_to 'INICIO', root_path , class: 'btn btn-block btn-product' %>
+     </div>
+   </div>
+ </div>

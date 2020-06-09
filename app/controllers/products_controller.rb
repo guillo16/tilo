@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:show, :search]
   before_action :set_products, only: [:show, :update, :destroy]
 
   def index
-    @products = Product.all
-    if params["flavor"]
-      @products = Product.where(flavor: params["flavor"])
+    if current_user.admin?
+      @products = Product.all
     else
-      @products
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
     end
   end
 
@@ -51,6 +51,18 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to products_path
+  end
+
+  def search
+    if params[:query].present?
+      sql_query = " \
+      products.title @@ :query \
+      OR categories.title @@ :query \
+      "
+      @products = Product.joins(:category).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = Product.all
+    end
   end
 
   private

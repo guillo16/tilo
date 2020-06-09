@@ -7,7 +7,7 @@
 </div>
 <div class="product-title">
   <h2><%= @product.title.upcase %></h2>
-  <h3>$560.00</h3>
+  <h3><%= humanized_money_with_symbol(@product.price) %></h3>
   <%= form_tag line_items_path do %>
   <%= hidden_field_tag 'product_id', @product.id %>
   <%= submit_tag 'AGREGAR AL CARRITO', class: 'btn btn btn-lg btn-product btn-block' %>

@@ -5,7 +5,7 @@
     <%= cl_image_tag photo.key%>
     <% end %>
     <p><%= product.title %></p>
-    <h2>$<%= product.stock %></h2>
+    <h2><%= humanized_money_with_symbol(product.price) %></h2>
   </div>
   <% end %>
 </div>

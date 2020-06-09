@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
   devise_for :users
   root to: 'pages#home'
+  post 'procesar-pago', to: "payments#create"
 
   resources :divisions, except: :destroy
   resources :categories, except: :destroy

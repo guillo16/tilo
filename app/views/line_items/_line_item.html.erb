@@ -14,9 +14,8 @@
     </div>
     <% end %>
     <% else %>
-    <div class="line-quantity">
-      <%= line_item.quantity %>
-      (ultima unidad)
+    <div class="line-quantity-last pt-1 pb-1">
+      <p><%= line_item.quantity %> <span style="font-size: 13px; color: grey;">ultima unidad</span></p>
     </div>
     <% end %>
     <div class="line-price">

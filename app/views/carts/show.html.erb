@@ -21,13 +21,23 @@
         <h4>TOTAL</h4>
         <h2><span class="total-price"></span><%= number_to_currency(@cart.total_price) %></h2>
       </div>
-      <br>
-      <div class="check-out-button">
-        <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'cart_id', @cart.id %>
-        <%= submit_tag 'COMPRAR', class: 'btn btn-secondary btn-lg btn-block' %>
-        <% end %>
-      </div>
+
+    <br>
+    <div class="check-out-button">
+      <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'cart_id', @cart.id %>
+      <%= submit_tag 'COMPRAR', class: 'btn btn-secondary btn-lg btn-block' %>
+      <% end %>
     </div>
   </div>
 </div>
+</div>
+
+  <!--
+      <% @cart.line_items.each do |item| %>
+      <%if item.product.stock > 0 %>
+      <% else %>
+      <p>no quedan mas articulos de <%= item.product.title %></p>
+      <% end %>
+      <% end %>
+    -->

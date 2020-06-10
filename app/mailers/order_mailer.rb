@@ -1,13 +1,6 @@
 class OrderMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.order_mailer.new_order.subject
-  #
   def new_order
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @order = params[:order]
+    mail(to: ENV["ADMIN_EMAIL"], subject: "Tienes una nueva orden!")
   end
 end

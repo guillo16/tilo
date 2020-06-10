@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
     session[:cart_id] = nil
     @order.update(state: 'Encargado')
     OrderMailer.with(order: @order).new_order.deliver_later
-    # OrderMailer.with(order: @order).new_order_email.deliver_later
+    OrderMailer.with(order: @order).new_payment.deliver_later
     redirect_to order_path(@order)
   end
 

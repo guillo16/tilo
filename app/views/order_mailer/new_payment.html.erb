@@ -1,4 +1,6 @@
-<p>Gracias <%= @order.user.email %> por comprar en Tilo tienda Natural</p>
+<p>Tienes una nueva Venta en Tilo
+Tienda Natural</p>
+<p>De: <%= @order.user.email %></p>
 
 Detalle de la orden<br>
 --------------------------
@@ -7,5 +9,4 @@ Detalle de la orden<br>
 
 <p><strong>Producto: </strong><%= line_item.product.title %></p>
 <p><strong>Cantidad: </strong><%= line_item.quantity %></p>
-
 <% end %>

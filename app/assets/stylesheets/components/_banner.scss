@@ -20,7 +20,7 @@
 .division-banner {
   background-position: center;
   background-size: cover;
-  height: 30vh;
+  height: 40vh;
   margin-top: 80px;
   h2 {
     font-weight: bold;
@@ -62,5 +62,11 @@
     width: 100%;
     height: 150px;
     object-fit: cover;
+  }
+}
+
+@media(max-width: 575px) {
+  .division-banner {
+    height: 30vh;
   }
 }

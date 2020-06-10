@@ -1,0 +1,12 @@
+<p>Tienes una nueva Venta en Tilo
+Tienda Natural</p>
+<p>De: <%= @order.user.email %></p>
+
+Detalle de la orden<br>
+--------------------------
+<p><strong>Precio:</strong> <%= @order.amount %></p>
+<% @order.cart.line_items.each do |line_item| %>
+
+<p><strong>Producto: </strong><%= line_item.product.title %></p>
+<p><strong>Cantidad: </strong><%= line_item.quantity %></p>
+<% end %>

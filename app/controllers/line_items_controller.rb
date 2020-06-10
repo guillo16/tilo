@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
+  skip_before_action :authenticate_user!, only: [:show, :create, :edit, :update]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
 
@@ -32,7 +33,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item.cart, notice: 'update' }
+        format.html { redirect_to @line_item.cart }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }

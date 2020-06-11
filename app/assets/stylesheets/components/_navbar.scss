@@ -4,6 +4,8 @@
   background: #929884;
   width: 100%;
   z-index: 1000;
+  position: sticky;
+  top: 0px;
   .navbar-toggler {
     border: transparent;
     &:focus {

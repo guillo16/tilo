@@ -65,6 +65,13 @@
   }
 }
 
+.main-container {
+  img {
+    width: 800px;
+    object-fit: cover;
+  }
+}
+
 
 @media(max-width: 1026px) {
   .social-banner {

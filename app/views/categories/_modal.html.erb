@@ -15,15 +15,20 @@
       <div class="modal-body">
         <div class="sidebar-filter">
           <% @products.last(1).each do |product| %>
-          <% if product.flavor.present? %>
-          <h2>Sabor</h2>
+          <% if product.brand.present? %>
+          <h2>Marcas</h2>
           <% else %>
           <% end %>
           <% end %>
-          <% @category.products.each do |product| %>
-          <p><%= link_to product.flavor, category_path(flavor: product.flavor)%></p>
+          <% @category.products.uniq(&:brand).each do |product| %>
+          <p><%= link_to product.brand, category_path(brand: product.brand)%></p>
           <% end %>
-          <p><%= link_to 'Todos', category_path(@category)  %></p>
+          <hr style="border-width: 2px;">
+          <h2>Apto para:</h2>
+          <% @category.products.uniq(&:condition).each do |product| %>
+          <p><%= link_to product.condition, category_path(condition: product.condition)%></p>
+          <% end %>
+          <hr style="border-width: 2px;">    <p><%= link_to 'Todos', category_path(@category)  %></p>
         </div>
       </div>
       <div class="modal-footer">

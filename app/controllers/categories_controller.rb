@@ -15,8 +15,10 @@ class CategoriesController < ApplicationController
     @products = @category.products
     if params["created_at"]
       @products = @category.products.order(created_at: :desc)
-    elsif params["flavor"]
-      @products = Product.where(flavor: params["flavor"])
+    elsif params["brand"]
+      @products = @category.products.where(brand: params["brand"])
+    elsif params["condition"]
+      @products = @category.products.where(condition: params["condition"])
     else
       @products
     end
@@ -65,3 +67,5 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:title, :division_id)
   end
 end
+
+

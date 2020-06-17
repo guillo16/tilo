@@ -7,12 +7,18 @@
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <p>Precio</p>
 <%= f.input :price, label: false, input_html: { class: 'form-control form-control-lg'} %>
+<p>Oferta (poner el precio anterior)</p>
+<%= f.input :sale, label: false %>
 <p>Stock</p>
 <%= f.input :stock, label: false %>
 <p>Marca</p>
 <%= f.input :brand, label: false %>
 <p>Celíaco</p>
 <%= f.input :condition, label: false, collection: ['Celíaco'] %>
+<p>Vegano</p>
+<%= f.input :vegan, label: false, collection: ['Vegano'] %>
+<p>Diabético</p>
+<%= f.input :sugar, label: false, collection: ['Diabético'] %>
 <p>Categoría</p>
 <%= f.association :category, label: false %>
 <%= f.submit 'Crear Producto', class: 'btn btn-product btn-lg btn-block' %>

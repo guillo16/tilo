@@ -71,4 +71,3 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:title, :division_id)
   end
 end
-

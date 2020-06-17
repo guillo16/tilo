@@ -9,8 +9,10 @@
 <%= f.input :price, label: false, input_html: { class: 'form-control form-control-lg'} %>
 <p>Stock</p>
 <%= f.input :stock, label: false %>
-<p>Sabor</p>
-<%= f.input :flavor, label: false %>
+<p>Marca</p>
+<%= f.input :brand, label: false %>
+<p>Celiaco</p>
+<%= f.input :condition, label: false, collection: ['celiaco'] %>
 <p>Categoria</p>
 <%= f.association :category, label: false %>
 <%= f.submit 'Crear Producto', class: 'btn btn-product btn-lg btn-block' %>

@@ -11,9 +11,9 @@
 <%= f.input :stock, label: false %>
 <p>Marca</p>
 <%= f.input :brand, label: false %>
-<p>Celiaco</p>
-<%= f.input :condition, label: false, collection: ['Celiaco'] %>
-<p>Categoria</p>
+<p>Celíaco</p>
+<%= f.input :condition, label: false, collection: ['Celíaco'] %>
+<p>Categoría</p>
 <%= f.association :category, label: false %>
 <%= f.submit 'Crear Producto', class: 'btn btn-product btn-lg btn-block' %>
 <% end %>

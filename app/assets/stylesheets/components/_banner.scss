@@ -79,8 +79,30 @@
   }
 }
 
+@media(max-width: 885px) {
+  .main-container {
+    img {
+      width: 500px;
+      object-fit: cover;
+    }
+  }
+}
+
 @media(max-width: 575px) {
+
+  .main-banner {
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - 170px);
+  }
   .division-banner {
     height: 30vh;
+  }
+
+  .main-container {
+    img {
+      width: 300px;
+      object-fit: cover;
+    }
   }
 }

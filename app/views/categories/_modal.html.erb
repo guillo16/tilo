@@ -28,6 +28,12 @@
           <% @category.products.uniq(&:condition).each do |product| %>
           <p><%= link_to product.condition, category_path(condition: product.condition)%></p>
           <% end %>
+          <% @category.products.uniq(&:vegan).each do |product| %>
+          <p><%= link_to product.vegan, category_path(vegan: product.vegan)%></p>
+          <% end %>
+          <% @category.products.uniq(&:sugar).each do |product| %>
+          <p><%= link_to product.sugar, category_path(sugar: product.sugar)%></p>
+          <% end %>
           <hr style="border-width: 2px;">    <p><%= link_to 'Todos', category_path(@category)  %></p>
         </div>
       </div>

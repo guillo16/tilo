@@ -19,6 +19,10 @@ class CategoriesController < ApplicationController
       @products = @category.products.where(brand: params["brand"])
     elsif params["condition"]
       @products = @category.products.where(condition: params["condition"])
+    elsif params["vegan"]
+      @products = @category.products.where(vegan: params["vegan"])
+    elsif params["sugar"]
+      @products = @category.products.where(sugar: params["sugar"])
     else
       @products
     end
@@ -67,5 +71,3 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:title, :division_id)
   end
 end
-
-

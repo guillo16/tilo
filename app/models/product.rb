@@ -8,4 +8,5 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :stock, presence: true
   has_many_attached :photos
+
 end

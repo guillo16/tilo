@@ -6,9 +6,15 @@
   <p><%= @product.category.title %></p>
 </div>
 <div class="product-title">
-
   <h2><%= @product.title.upcase %></h2>
-  <h3><%= humanized_money_with_symbol(@product.price) %></h3>
+  <div class="d-flex">
+    <% if @product.sale.present? %>
+    <h3 style="color: red; font-weight: bold;"><%= humanized_money_with_symbol(@product.price) %></h3>
+    <h3 style="padding-left: 10px; text-decoration: line-through; color: lightgrey;">$<%= @product.sale %></h3>
+    <% else %>
+    <h3><%= humanized_money_with_symbol(@product.price) %></h3>
+    <% end %>
+  </div>
   <% if @product.stock >= 1 %>
   <%= form_tag line_items_path do %>
   <%= hidden_field_tag 'product_id', @product.id %>

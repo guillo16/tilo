@@ -24,6 +24,7 @@
     <p><%= link_to product.brand, category_path(brand: product.brand)%></p>
     <% end %>
     <hr style="border-width: 2px;">
+    <h2>Apto para:</h2>
     <% @category.products.uniq(&:condition).each do |product| %>
     <p><%= link_to product.condition, category_path(condition: product.condition)%></p>
     <% end %>

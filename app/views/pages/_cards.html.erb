@@ -4,7 +4,7 @@
 </div>
 <div class="scrolling-wrapper">
   <div class="home-card-container">
-    <% @products.first(8).each do |product| %>
+    <% @products.last(8).uniq(&:title).reverse_each do |product| %>
     <%= render 'shared/home_cards', product: product %>
     <% end %>
   </div>
@@ -15,7 +15,7 @@
 </div>
 <div class="scrolling-wrapper">
   <div class="home-card-container">
-    <% @products.last(8).each do |product| %>
+    <% @products.last(8).uniq(&:title).each do |product| %>
     <%= render 'shared/home_cards', product: product %>
     <% end %>
   </div>

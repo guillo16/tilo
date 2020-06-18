@@ -14,10 +14,11 @@
 <section id="division-product-container">
   <div class="division-container">
     <% @division.categories.each do |category| %>
-    <% category.products.each do |product| %>
+    <% category.products.uniq(&:title).each do |product| %>
     <%= render 'shared/cards', product: product %>
     <% end %>
     <% end %>
   </div>
 </section>
 <%= render 'shared/footer' %>
+

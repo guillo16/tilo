@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
 
   def edit
     if current_user.admin?
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
     else
       redirect_to root_path
       flash[:notice] = "Accesso denegado!"

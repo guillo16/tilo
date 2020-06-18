@@ -5,7 +5,7 @@
   </div>
 </div>
 <section id="category-list">
-  <div class="categories-list text-center d-md-flex justify-content-center">
+  <div class="categories-list text-center d-lg-flex justify-content-center">
     <% @division.categories.each do |category| %>
     <p><%= link_to category.title , category_path(category)  %></p>
     <% end %>

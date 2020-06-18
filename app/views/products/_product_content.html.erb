@@ -7,6 +7,27 @@
 </div>
 <div class="product-title">
   <h2><%= @product.title.upcase %></h2>
+
+  <% if @product.flavor.present? %>
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= @product.flavor %>
+    </a>
+    <% product_title =  @product.title %>
+    <% product_links = @products.filter { |product| product.title == product_title } %>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <% product_links.each do |g| %>
+
+      <%= link_to  g.flavor, product_path(g), class: 'dropdown-item' %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <% else %>
+  <% end %>
+
+
+
   <div class="d-flex">
     <% if @product.sale.present? %>
     <h3 style="color: red; font-weight: bold;"><%= humanized_money_with_symbol(@product.price) %></h3>

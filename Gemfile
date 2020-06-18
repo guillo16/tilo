@@ -29,6 +29,7 @@ gem 'redis', '~> 4.0'
 gem 'cloudinary', '~> 1.12.0'
 
 gem 'money-rails'
+gem 'friendly_id', '~> 5.2.4'
 
 gem 'letter_opener', group: :development
 

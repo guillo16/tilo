@@ -13,6 +13,10 @@
       </div>
       <div class="pl-3">
         <p><strong>Producto:</strong> <%= line.product.title %></p>
+        <% if line.product.flavor.present?  %>
+        <p><strong>Tamaño:</strong> <%= line.product.flavor %></p>
+        <% else %>
+        <% end %>
         <p><strong>Cantidad:</strong> <%= line.quantity %></p>
       </div>
     </div>

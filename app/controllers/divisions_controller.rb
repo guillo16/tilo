@@ -32,7 +32,7 @@ class DivisionsController < ApplicationController
   private
 
   def set_division
-    @division = Division.find(params[:id])
+    @division = Division.friendly.find(params[:id])
   end
 
   def division_params

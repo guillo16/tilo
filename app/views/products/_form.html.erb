@@ -12,7 +12,41 @@
 <p>Stock</p>
 <%= f.input :stock, label: false %>
 <p>Marca</p>
-<%= f.input :brand, label: false %>
+<%= f.input :brand, label: false , collection: ["Beepure",
+"La Francia",
+"Murke",
+"Las Quinas",
+"Doña Magdalena",
+"Cuarto Creciente",
+"Le Fit",
+"Fit Fruit",
+"Zafran",
+"Delicel",
+"Integralia",
+"Cachafaz",
+"Quaker",
+"Deluxe",
+"Integra",
+"Mate & Co",
+"Famiglia Dell'Isola",
+"Recetas de Entonces Gourmet ",
+"Pampa Gourmet",
+"Cristo del Cerro",
+"Ricco",
+"Inti zen",
+"Natier",
+"Dicomere",
+"Heredia",
+"Chamana",
+"Felices las Vacas",
+"Prasat",
+"Leofanti",
+"Carmela Tomasa",
+"Sentida Botanica",
+"Veganitas",
+"Veganis",
+"Sri Sri"
+]%>
 <p>Celíaco</p>
 <%= f.input :condition, label: false, collection: ['Celíaco'] %>
 <p>Vegano</p>
@@ -23,4 +57,5 @@
 <%= f.association :category, label: false %>
 <%= f.submit 'Crear Producto', class: 'btn btn-product btn-lg btn-block' %>
 <% end %>
+
 

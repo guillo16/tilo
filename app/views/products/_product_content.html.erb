@@ -7,10 +7,10 @@
 </div>
 <div class="product-title">
   <h2><%= @product.title.upcase %></h2>
-
-  <% if @product.flavor.present? %>
-  <div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="quantity-product-container">
+   <% if @product.flavor.present? %>
+   <div class="dropdown">
+    <a class="btn btn-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <%= @product.flavor %>
     </a>
     <% product_title =  @product.title %>
@@ -25,25 +25,27 @@
   <br>
   <% else %>
   <% end %>
+</div>
 
 
 
-  <div class="d-flex">
-    <% if @product.sale.present? %>
-    <h3 style="color: red; font-weight: bold;"><%= humanized_money_with_symbol(@product.price) %></h3>
-    <h3 style="padding-left: 10px; text-decoration: line-through; color: lightgrey;">$<%= @product.sale %></h3>
-    <% else %>
-    <h3><%= humanized_money_with_symbol(@product.price) %></h3>
-    <% end %>
-  </div>
-  <% if @product.stock >= 1 %>
-  <%= form_tag line_items_path do %>
-  <%= hidden_field_tag 'product_id', @product.id %>
-  <%= submit_tag 'AGREGAR AL CARRITO', class: 'btn btn btn-lg btn-product btn-block' %>
-  <% end %>
+
+<div class="d-flex">
+  <% if @product.sale.present? %>
+  <h3 style="color: red; font-weight: bold;"><%= humanized_money_with_symbol(@product.price) %></h3>
+  <h3 style="padding-left: 10px; text-decoration: line-through; color: lightgrey;">$<%= @product.sale %></h3>
   <% else %>
-  <button class="btn btn btn-lg btn-dark btn-block">AGOTADO</button>
+  <h3><%= humanized_money_with_symbol(@product.price) %></h3>
   <% end %>
+</div>
+<% if @product.stock >= 1 %>
+<%= form_tag line_items_path do %>
+<%= hidden_field_tag 'product_id', @product.id %>
+<%= submit_tag 'AGREGAR AL CARRITO', class: 'btn btn btn-lg btn-product btn-block' %>
+<% end %>
+<% else %>
+<button class="btn btn btn-lg btn-dark btn-block">AGOTADO</button>
+<% end %>
 </div>
 <div class="product-content">
   <div class="d-flex justify-content-between align-items-center product-show-list" id="button" onclick="showElement()">

@@ -26,3 +26,22 @@
   border-color: $green;
   color: white;
 }
+
+
+.btn-dropdown {
+  background-color: transparent;
+  color: $green;
+  border-color: $green;
+  &:hover {
+    color: $green;
+  }
+}
+.quantity-product-container {
+  .dropdown-item {
+
+   color: $green;
+ }
+}
+
+
+

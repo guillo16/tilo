@@ -15,7 +15,7 @@
   background-color: rgba(250, 250, 250, 0.8);
   border-radius: 6px;
   position: fixed;
-  top: 250px;
+  top: 150px;
   left: 50%;
   transform: translate(-50%, 0);
   width: 600px;
@@ -31,7 +31,8 @@
   padding-bottom: 30px;
   p {
     font-size: 16px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 6px;
   }
 }
 

@@ -13,7 +13,7 @@
       <h2><strong>Fecha: </strong><%= order.created_at.in_time_zone("Buenos Aires").strftime('%d/%m/%Y %H:%M') %></h2>
       <h2><strong>Precio: </strong>$<%= order.amount %></h2>
     </div>
-
+    <h2><strong>Forma de Pago: </strong><%= order.method %></h2>
     <div class="d-md-flex justify-content-between align-items-center">
       <h2><strong>Nombre: </strong><%= order.user.name %></h2>
       <h2><strong>Email: </strong><%= order.user.email %> </h2>
@@ -28,16 +28,16 @@
     </div>
     <% order.cart.line_items.each do |line_item| %>
     <div class="order-index-footer">
-       <% line_item.product.photos.each do |photo| %>
-       <%= cl_image_tag photo.key %>
-       <% end %>
-      <div>
-        <h2><strong>Producto: </strong><%= line_item.product.title %></h2>
-        <h2><strong>Tamaño: </strong><%= line_item.product.flavor %></h2>
-        <h2><strong>Cantidad: </strong><%= line_item.quantity %></h2>
-      </div>
+     <% line_item.product.photos.first(1).each do |photo| %>
+     <%= cl_image_tag photo.key %>
+     <% end %>
+     <div>
+      <h2><strong>Producto: </strong><%= line_item.product.title %></h2>
+      <h2><strong>Tamaño: </strong><%= line_item.product.flavor %></h2>
+      <h2><strong>Cantidad: </strong><%= line_item.quantity %></h2>
     </div>
-    <% end %>
   </div>
-  <% end%>
+  <% end %>
+</div>
+<% end%>
 </div>

@@ -18,6 +18,15 @@
         <%= hidden_field_tag :authenticity_token %>
         <input type="hidden" name='order_id' value=<%= @order.id %>>
 
+        <div class="form-group">
+          <label for="exampleFormControlSelect1"> <strong> Metodo de Pago:</strong></label>
+          <select class="form-control" id="payment_method" name="payment_method">
+            <option value="Pago contra entrega">Pago contra entrega</option>
+            <option type="hidden" value="Transferencia Bancaria">Transferencia Bancaria</option>
+            <option value="Pago en el Local">Pago en el Local</option>
+          </select>
+        </div>
+
         <button type="submit" class="btn btn-product btn-lg btn-block" data-transaction-amount="<%= @order.amount %>">Comprar</button>
       </form>
       <% end %>

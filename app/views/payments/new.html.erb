@@ -17,10 +17,6 @@
       <form action="/procesar-pago" method="POST">
         <%= hidden_field_tag :authenticity_token %>
         <input type="hidden" name='order_id' value=<%= @order.id %>>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
 
         <button type="submit" class="btn btn-product btn-lg btn-block" data-transaction-amount="<%= @order.amount %>">Comprar</button>
       </form>

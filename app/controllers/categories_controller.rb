@@ -17,6 +17,8 @@ class CategoriesController < ApplicationController
       @products = @category.products.order(created_at: :desc)
     elsif params["brand"]
       @products = @category.products.where(brand: params["brand"])
+    elsif params["capacity"]
+      @products = @category.products.where(capacity: params["capacity"])
     elsif params["condition"]
       @products = @category.products.where(condition: params["condition"])
     elsif params["vegan"]

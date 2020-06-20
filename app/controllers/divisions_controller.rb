@@ -1,6 +1,6 @@
 class DivisionsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
-  before_action :set_division, only: [:show, :edit, :update]
+  before_action :set_division, only: [:show, :update]
 
   def index
   end
@@ -22,6 +22,12 @@ class DivisionsController < ApplicationController
   end
 
   def edit
+    if current_user.admin?
+      @division = Division.friendly.find(params[:id])
+    else
+      redirect_to root_path
+      flash[:notice] = "Accesso denegado!"
+    end
   end
 
   def update

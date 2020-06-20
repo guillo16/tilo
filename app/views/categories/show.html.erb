@@ -7,7 +7,7 @@
     <div class="category-title d-flex justify-content-between">
       <div>
         <h2><%= @category.title %></h2>
-        <p><%= @products.count %> productos</p>
+        <p><%= @products.uniq(&:title).count %> productos</p>
       </div>
       <div>
         <div class="dropdown">

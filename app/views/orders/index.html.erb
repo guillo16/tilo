@@ -14,6 +14,7 @@
       <h2><strong>Precio: </strong>$<%= order.amount %></h2>
     </div>
     <h2><strong>Forma de Pago: </strong><%= order.method %></h2>
+    <h2><strong>Envio: </strong>$<%= order.shipping %>(no incluido en el total)</h2>
     <div class="d-md-flex justify-content-between align-items-center">
       <h2><strong>Nombre: </strong><%= order.user.name %></h2>
       <h2><strong>Email: </strong><%= order.user.email %> </h2>

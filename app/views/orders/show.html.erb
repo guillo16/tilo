@@ -23,7 +23,11 @@
     <% end %>
     <div class="order-show-footer">
       <p>Estado:<strong> <%= @order.state %> <i class="far fa-check-circle"></i></p></strong>
-      <p>Total: <strong> <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></strong></p>
+      <p>Sub-total: <%= humanized_money_with_symbol(@order.amount) %></p>
+      <p>Envio: $<%= @order.shipping %></p>
+      <br>
+      <p>TOTAL: <strong>$<%= @order.total %></strong></p>
+      <br>
       <p>Forma de Pago: <strong> <%= @order.method %></strong></p>
       <% if @order.method == "Transferencia Bancaria" %>
       <p>CBU: <strong>0030330404949495950</strong></p>

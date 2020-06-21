@@ -11,7 +11,7 @@
   <h2>PRODUCTOS RELACIONADOS</h2>
   <div class="scrolling-wrapper">
     <div class="home-card-container">
-      <% @products.last(8).uniq(&:title).each do |product| %>
+      <% @products.last(5).uniq(&:title).each do |product| %>
       <%= render 'shared/home_cards', product: product %>
       <% end %>
     </div>

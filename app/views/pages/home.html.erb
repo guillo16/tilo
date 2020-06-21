@@ -18,7 +18,7 @@
   </div>
   <div class="scrolling-wrapper">
     <div class="home-card-container">
-      <% @products.first(8).uniq(&:title).each do |product| %>
+      <% @products.first(6).uniq(&:title).each do |product| %>
       <%= render 'shared/home_cards', product: product %>
       <% end %>
     </div>

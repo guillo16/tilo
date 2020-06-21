@@ -5,10 +5,20 @@ class PaymentsController < ApplicationController
 
   def create
     # DESTROY CART
+    if params[:shipping_method] == 'low'
+      shipping_total = 60
+    elsif params[:shipping_method] == 'much'
+      shipping_total = 90
+    else
+      shipping_total = 0
+    end
+    shipping = shipping_total
+    total_price = @order.amount.to_i + shipping_total
+    # DESTROY CART
     payment = params[:payment_method]
     @cart = Cart.find(session[:cart_id])
     session[:cart_id] = nil
-    @order.update(state: 'Encargado', method: payment)
+    @order.update(state: 'Encargado', method: payment, total: total_price, shipping: shipping)
     OrderMailer.with(order: @order).new_order.deliver_later
     OrderMailer.with(order: @order).new_payment.deliver_later
     redirect_to order_path(@order)

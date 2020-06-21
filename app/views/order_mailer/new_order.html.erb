@@ -4,7 +4,11 @@ Tienda Natural</p>
 
 Detalle de la orden<br>
 --------------------------
-<p><strong>Precio:</strong> <%= @order.amount %></p>
+<p><strong>Sub-total:</strong> <%= @order.amount %></p>
+<p><strong>Envio:</strong> <%= @order.shipping %></p>
+<p><strong>TOTAL:</strong> $<%= @order.total %></p>
+<br>
+--------------------------
 <% @order.cart.line_items.each do |line_item| %>
 
 <p><strong>Producto: </strong><%= line_item.product.title %></p>

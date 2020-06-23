@@ -51,7 +51,20 @@
 "Sri Sri"
 ]%>
 <p>Sabor</p>
-<%= f.input :capacity, label: false, collection: ["Vainilla", "Chocolate", "Frutilla"] %>
+<%= f.input :capacity, label: false, collection: ["naranja",
+"limón",
+"vainilla",
+"chocolate",
+"coco",
+"avena",
+"cacao",
+"salvado con sal",
+"salvado sin sal",
+"dulces",
+"original",
+"chocolate sin azucar",
+"chocolate negro",
+"chocolate blanco"] %>
 
 <p>Celíaco</p>
 <%= f.input :condition, label: false, collection: ['Celíaco'] %>
@@ -63,5 +76,6 @@
 <%= f.association :category, label: false %>
 <%= f.submit 'Crear Producto', class: 'btn btn-product btn-lg btn-block' %>
 <% end %>
+
 
 

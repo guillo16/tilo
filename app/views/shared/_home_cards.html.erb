@@ -4,6 +4,9 @@
   <%= cl_image_tag photo.key%>
   <% end %>
   <p><%= product.title.truncate(30) %></p>
+  <% if product.stock < 1 %>
+  <h4 style="color: grey;">AGOTADO</h4>
+  <% else %>
   <div class="d-flex justify-content-center">
     <% if product.sale.present? %>
     <h4 style="color: red;"><%= humanized_money_with_symbol(product.price) %></h4>
@@ -12,6 +15,7 @@
     <h4><%= humanized_money_with_symbol(product.price) %></h4>
     <% end %>
   </div>
+  <% end %>
   <% end %>
 </div>
 

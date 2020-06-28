@@ -6,7 +6,7 @@
     <% end %>
     <p><%= product.title %></p>
     <% if product.stock < 1 %>
-    <h4 style="color: grey;">AGOTADO</h4>
+    <h4 style="color: black;">AGOTADO</h4>
     <% else %>
     <div class="d-flex justify-content-center">
       <% if product.sale.present? %>

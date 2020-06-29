@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   def index
     if current_user.admin?
-      @order = Order.sum('amount_cents') * 0.01
-      @orders = Order.order(created_at: :desc)
+      @order = Order.where(state: 'Encargado').sum('amount_cents') * 0.01
+      @orders = Order.where(state: 'Encargado')
     else
       redirect_to root_path
       flash[:notice] = "Accesso denegado!"

@@ -30,6 +30,7 @@ gem 'cloudinary', '~> 1.12.0'
 
 gem 'money-rails'
 gem 'friendly_id', '~> 5.2.4'
+gem 'kaminari'
 
 gem 'letter_opener', group: :development
 

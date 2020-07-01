@@ -17,11 +17,13 @@
   </section>
   <section id="division-product-container">
     <div class="division-container">
-      <% @division.categories.each do |category| %>
-      <% category.products.uniq(&:title).each do |product| %>
+      <% @products.uniq(&:title).each do |product| %>
       <%= render 'shared/cards', product: product %>
       <% end %>
-      <% end %>
+
+    </div>
+    <div class="text-center">
+      <%= paginate @products %>
     </div>
   </section>
 </div>

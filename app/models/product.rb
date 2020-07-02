@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :line_items, dependent: :destroy
   monetize :price_cents
-  paginates_per 6
+  paginates_per 12
 
   validates :title, presence: true
   validates :description, presence: true

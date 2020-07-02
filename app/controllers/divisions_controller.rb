@@ -6,6 +6,8 @@ class DivisionsController < ApplicationController
   end
 
   def show
+    categories = @division.categories
+    @products = Product.where(category_id: categories).page params[:page]
   end
 
   def new

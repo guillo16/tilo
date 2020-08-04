@@ -26,20 +26,14 @@
             <option value="Pago en el Local">Pago en el Local</option>
           </select>
         </div>
-        <% if @order.amount.to_i > 3000 %>
-        <strong><p>Envio Gratis</p></strong>
-        <% else %>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Envios</label>
           <select class="form-control" id="shipping_method" name="shipping_method">
-            <option  value="g"></option>
+            <option value="g">Retiro por el local</option>
             <option  value="low">$60 (Zona Centro)</option>
             <option value="much">$90 (Otras Zonas)</option>
-            <option value="g">Retiro por el local</option>
           </select>
         </div>
-        <% end %>
-
         <button type="submit" class="btn btn-product btn-lg btn-block" data-transaction-amount="<%= @order.amount %>">Comprar</button>
       </form>
       <% end %>

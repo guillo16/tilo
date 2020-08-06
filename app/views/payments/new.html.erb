@@ -13,7 +13,13 @@
 
     <% else %>
     <div class="payment-order">
-      <p><strong>TOTAL:</strong><%= humanized_money_with_symbol(@order.amount) %></p>
+      <% if current_user.orders.where(state: 'Encargado').count.zero? %>
+        <p>10% de descuento en tu primera Compra 😃</p>
+        <p><strong>TOTAL:</strong> <span style="text-decoration: line-through; color: red;
+        margin-right: 10px;">$<%= @order.amount %></span>$<%= @order.amount.to_i * 0.90%></p>
+        <% else %>
+        <p><strong>TOTAL:</strong><%= humanized_money_with_symbol(@order.amount) %></p>
+      <% end %>
       <form action="/procesar-pago" method="POST">
         <%= hidden_field_tag :authenticity_token %>
         <input type="hidden" name='order_id' value=<%= @order.id %>>

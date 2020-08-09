@@ -13,7 +13,13 @@ class PaymentsController < ApplicationController
       shipping_total = 0
     end
     shipping = shipping_total
-    total_price = @order.amount.to_i + shipping_total
+
+    if current_user.orders.where(state: 'Encargado').count.zero?
+      total_descount = 0.9
+      total_price = @order.amount.to_i * total_descount + shipping_total
+    else
+      total_price = @order.amount.to_i + shipping_total
+    end
     # DESTROY CART
     payment = params[:payment_method]
     @cart = Cart.find(session[:cart_id])

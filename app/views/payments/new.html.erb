@@ -14,7 +14,7 @@
     <% else %>
     <div class="payment-order">
       <% if current_user.orders.where(state: 'Encargado').count.zero? %>
-        <p>10% de descuento en tu primera Compra 😃</p>
+        <p class="text-center" style="margin-bottom: 16px; font-weight: bold;">10% de descuento en tu primera Compra 😃</p>
         <p><strong>TOTAL:</strong> <span style="text-decoration: line-through; color: red;
         margin-right: 10px;">$<%= @order.amount %></span>$<%= @order.amount.to_i * 0.90%></p>
         <% else %>

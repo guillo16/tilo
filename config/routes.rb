@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'procesar-pago', to: "payments#create"
   get 'pages/search', to: 'pages#search'
   get 'products/search', to: 'products#search'
+  get '/info', to: 'pages#info'
 
   resources :divisions, except: :destroy
   resources :categories, except: :destroy

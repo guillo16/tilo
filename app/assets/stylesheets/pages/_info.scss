@@ -18,4 +18,38 @@
     font-weight: bold;
     margin-bottom: 16px;
   }
+
+  p {
+    font-size: 20px;
+    color: $green;
+    font-weight: bold;
+    margin-left: 24px;
+  }
+}
+
+@media(max-width: 575px) {
+  .info-important {
+  h2 {
+    font-size: 28px;
+    padding-top: 36px;
+  }
+  h3 {
+    color: $green;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    font-size: 20px;
+  }
+  li {
+    font-size: 16px;
+    color: $green;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $green;
+    font-weight: bold;
+  }
+}
 }

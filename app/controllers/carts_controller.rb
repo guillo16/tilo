@@ -56,6 +56,14 @@ class CartsController < ApplicationController
     end
   end
 
+  def carts_delete
+    carts = Cart.all
+    new_carts = carts.reject { |c| c.orders.present? }
+    last_carts = new_carts.reject { |c| c.line_items.present? }
+    last_carts.each { |c| c.destroy }
+    redirect_to carts_path
+  end
+
   private
 
   def set_cart

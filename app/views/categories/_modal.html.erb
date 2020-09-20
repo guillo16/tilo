@@ -14,12 +14,7 @@
       </div>
       <div class="modal-body">
         <div class="sidebar-filter">
-          <% @products.last(1).each do |product| %>
-          <% if product.brand.present? %>
           <h2>Marcas</h2>
-          <% else %>
-          <% end %>
-          <% end %>
           <% @category.products.uniq(&:brand).each do |product| %>
           <p><%= link_to product.brand, category_path(brand: product.brand)%></p>
           <% end %>

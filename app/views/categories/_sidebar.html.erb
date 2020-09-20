@@ -14,19 +14,9 @@
   </div>
   <h2>Filtrar por:</h2>
   <div class="sidebar-filter">
-    <% @products.last(1).each do |product| %>
-    <% if product.brand.present? %>
     <h2>Marcas</h2>
-    <% else %>
-    <% end %>
-    <% end %>
     <% @category.products.uniq(&:brand).each do |product| %>
     <p><%= link_to product.brand, category_path(brand: product.brand)%></p>
-    <% end %>
-    <hr style="border-width: 2px;">
-    <h2>Sabor</h2>
-    <% @category.products.uniq(&:capacity).each do |product| %>
-    <p><%= link_to product.capacity, category_path(capacity: product.capacity)%></p>
     <% end %>
     <hr style="border-width: 2px;">
     <h2>Apto para:</h2>

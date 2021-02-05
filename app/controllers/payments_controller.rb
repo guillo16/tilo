@@ -6,14 +6,12 @@ class PaymentsController < ApplicationController
   def create
     # DESTROY CART
     if params[:shipping_method] == 'low'
-      shipping_total = 60
-    elsif params[:shipping_method] == 'much'
-      shipping_total = 90
+      shipping_total = 1
     else
       shipping_total = 0
     end
     shipping = shipping_total
-    total_price = @order.amount.to_i + shipping_total
+    total_price = @order.amount.to_i
     # DESTROY CART
     payment = params[:payment_method]
     @cart = Cart.find(session[:cart_id])

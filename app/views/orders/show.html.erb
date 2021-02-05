@@ -24,7 +24,11 @@
     <div class="order-show-footer">
       <p>Estado:<strong> <%= @order.state %> <i class="far fa-check-circle"></i></p></strong>
       <p>Sub-total: <%= humanized_money_with_symbol(@order.amount) %></p>
-      <p>Envio: $<%= @order.shipping %></p>
+      <% if @order.shipping == 0 %>
+      <p>Envio: $<%= @order.shipping %> </p>
+      <% else %>
+      <p>Envio: <strong>a convenir</strong></p>
+      <% end %>
       <br>
       <p>TOTAL: <strong>$<%= @order.total %></strong></p>
       <br>

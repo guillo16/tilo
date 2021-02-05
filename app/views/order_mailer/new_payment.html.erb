@@ -4,7 +4,11 @@
 Detalle de la orden<br>
 --------------------------
 <p><strong>Sub-total:</strong> <%= @order.amount %></p>
-<p><strong>Envio:</strong> <%= @order.shipping %></p>
+<% if @order.shipping == 0 %>
+<p>Envio: $<%= @order.shipping %> </p>
+<% else %>
+<p>Envio: <strong>a convenir</strong></p>
+<% end %>
 <p><strong>Total:</strong> $<%= @order.total %></p>
 <br>
 <% @order.cart.line_items.each do |line_item| %>

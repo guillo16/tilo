@@ -5,7 +5,11 @@ Tienda Natural</p>
 Detalle de la orden<br>
 --------------------------
 <p><strong>Sub-total:</strong> <%= @order.amount %></p>
-<p><strong>Envio:</strong> <%= @order.shipping %></p>
+<% if @order.shipping == 0 %>
+<p>Envio: $<%= @order.shipping %> </p>
+<% else %>
+<p>Envio: <strong>A domicilio (convenir monto)</strong></p>
+<% end %>
 <p><strong>TOTAL:</strong> $<%= @order.total %></p>
 <br>
 --------------------------

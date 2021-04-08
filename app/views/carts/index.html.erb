@@ -1,13 +1,7 @@
+<!-- esta es la ruta para destruir los carritos!! chequear bien -->
 <div class="text-center mt-5">
   <p>Carritos: <%= @carts.size %></p>
-  <%= link_to 'Destruir los carros , peligroso no tocar!', '#', method: :destroy, data: { confirm: 'Are you sure?' }, class: "btn btn-danger disabled" %>
+  <%= link_to 'Destruir los carros , peligroso no tocar!', carts_delete_carts_path, method: :destroy, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 </div>
-<!-- esta es la ruta para destruir los carritos!! chequear bien -->
-<!-- carts_delete_carts_path -->
 
-<!-- Esta son las rutas para que ande -->
-<!-- resources :carts do
-    collection do
-      post :carts_delete
-    end
-  end -->
+

@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  skip_before_action :authenticate_user!, only: [:show, :create, :edit, :update]
+  skip_before_action :authenticate_user!, only: :show
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
 
@@ -22,7 +22,7 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
     if @line_item.save
-      redirect_to @line_item.cart, notice: 'Item added to cart.'
+      redirect_to @line_item.cart, notice: "Articulo agregado al carrito"
     else
       render 'product/show'
     end

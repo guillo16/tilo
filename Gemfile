@@ -49,7 +49,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass'
+gem "font-awesome-sass", "~> 6.1.1"
 gem 'simple_form'
 group :development, :test do
   gem 'pry-byebug'

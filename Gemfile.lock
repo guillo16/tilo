@@ -296,7 +296,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
-  font-awesome-sass
+  font-awesome-sass (~> 6.1.1)
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
   kaminari
